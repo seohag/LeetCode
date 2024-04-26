@@ -17,7 +17,5 @@ const convertToTitle = function(columnNumber) {
         }
     }
     
-    
-    
     return result.reverse().join("");
 };
