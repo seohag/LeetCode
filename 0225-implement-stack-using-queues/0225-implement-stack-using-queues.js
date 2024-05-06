@@ -9,15 +9,15 @@ const MyStack = function() {
  * @return {void}
  */
 MyStack.prototype.push = function(x) {
-        while (this.mainQueue.length > 0) {
-            this.subQueue.push(this.mainQueue.shift());
-        }
+    while (this.mainQueue.length > 0) {
+        this.subQueue.push(this.mainQueue.shift());
+    }
     
-        this.mainQueue.push(x);
+    this.mainQueue.push(x);
 
-        while (this.subQueue.length > 0) {
-            this.mainQueue.push(this.subQueue.shift());
-        }
+    while (this.subQueue.length > 0) {
+        this.mainQueue.push(this.subQueue.shift());
+    }
 };
 
 /**
