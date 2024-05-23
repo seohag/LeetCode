@@ -12,6 +12,7 @@ const NumArray = function(nums) {
  */
 NumArray.prototype.sumRange = function(left, right) {
     const range = this.nums.slice(left, right + 1);
+
     return range.reduce((sum, cur) => sum += cur, 0);
 };
 
