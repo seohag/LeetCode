@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 const isPowerOfFour = function(n) {
-    while (n && n % 4 == 0) {
+    while (n && n % 4 === 0) {
 	    n /= 4;
     }
     
