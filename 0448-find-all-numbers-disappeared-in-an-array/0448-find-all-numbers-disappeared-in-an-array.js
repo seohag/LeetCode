@@ -3,28 +3,24 @@
  * @return {number[]}
  */
 const findDisappearedNumbers = function(nums) {
-    const sortedArray = nums.sort((a, b) => a - b);
+    let index = 0;
     
-    const result = [];
-    let current = 1;
-    
-    for (let i = 0; i < nums.length; i++) {
-        let num = nums[i];
-        
-        while (current < num) {
-            result.push(current);
-            current++;
+    while (index <= nums.length - 1) {
+        if (nums[index] === undefined) {
+            index++;
+            continue;
         }
         
-        if (current == num) {
-            current++;
+        const targetIndex = nums[index] - 1;
+        
+        if (nums[targetIndex] === undefined) {
+            nums[index] = index + 1;
+            index++;
+        } else {
+            nums[index] = nums[targetIndex];
+            nums[targetIndex] = undefined;
         }
     }
     
-    while (current <= nums.length) {
-        result.push(current);
-        current++;
-    }
-    
-    return result;
+    return nums.filter(num => num !== undefined);
 }
