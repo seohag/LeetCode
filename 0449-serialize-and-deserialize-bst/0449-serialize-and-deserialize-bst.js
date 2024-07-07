@@ -44,7 +44,7 @@ const deserialize = function(data) {
     function dfs() {
         if (array[index] === "N") {
             index++;
-            return null
+            return null;
         }
         
         const node = new TreeNode(Number(array[index]));
