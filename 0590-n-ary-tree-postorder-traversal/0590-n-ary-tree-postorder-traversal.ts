@@ -14,7 +14,9 @@ function postorder(root: _Node | null): number[] {
   const result: number[] = [];
 
     const helperFunction = (node: Node | null) => {
-        if (!node) return;
+        if (!node) {
+            return;
+        }
         
         for (const child of node.children) {
             helperFunction(child);
